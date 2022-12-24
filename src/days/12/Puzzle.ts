@@ -1,5 +1,5 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import { call, coordEquiv, Coordinate, equalsAny, lateralNeighbors, ifTest, locate2D, lookup2D, notFalsy, not, backtrack, locateAllInstances } from '../gizm0-utils/utils';
+import { call, coordEquiv, Coordinate, equalsAny, lateralNeighbors, ifTest, locate2D, lookup2D, notFalsy, not, backtrack, locateAllInstances } from '../../gizm0-utils/utils';
 
 enum SpecialPosition {
   START = 'S',

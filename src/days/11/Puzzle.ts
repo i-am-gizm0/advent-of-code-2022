@@ -1,5 +1,5 @@
 import Puzzle from '../../types/AbstractPuzzle';
-import { mult, o, shiftIterator } from '../gizm0-utils/utils';
+import { mult, o, shiftIterator } from '../../gizm0-utils/utils';
 
 type WorryLevel = number;
 type Operand = number | 'old';
