@@ -159,3 +159,21 @@ export function backtrack<T>(backtrackMap: Map<T, T>, endPos: T): T[] {
 
   return path;
 }
+
+export function* pairIterator<T>(a: T[], b: T[]) {
+    if (a.length !== b.length) {
+        throw 'Lengths do not match';
+    }
+
+    for (let i = 0; i < a.length; i++) {
+        yield <Pair<T>>[a[i], b[i]];
+    }
+}
+
+export function coerceToList<T>(a: T | T[]) {
+    if (a instanceof Array) {
+        return a;
+    } else {
+        return [a];
+    }
+}
