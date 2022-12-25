@@ -177,3 +177,42 @@ export function coerceToList<T>(a: T | T[]) {
         return [a];
     }
 }
+
+export enum LateralDirection {
+    EQUIV,
+    LEFT,
+    RIGHT,
+    DOWN,
+    UP,
+}
+
+export function getDirection(from: Coordinate, to: Coordinate): LateralDirection {
+    if (from[1] == to[1]) {
+        if (from[0] > to[0]) {
+            return LateralDirection.LEFT;
+        } else if (from[0] < to[0]) {
+            return LateralDirection.RIGHT;
+        } else {
+            return LateralDirection.EQUIV;
+        }
+    } else if (from[0] == to[0]) {
+        if (from[1] > to[1]) {
+            return LateralDirection.DOWN;
+        } else if (from[1] < to[1]) {
+            return LateralDirection.UP;
+        } else {
+            return LateralDirection.EQUIV;
+        }
+    } else {
+        return undefined;
+    }
+}
+
+export function swapValues<T>(a: T, b: T): (v: T) => T {
+    return (v: T) => v === a ? b : v === b ? a : v;
+}
+
+export type MinMax = {
+    min: number;
+    max: number;
+}
